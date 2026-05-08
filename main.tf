@@ -74,13 +74,14 @@ module "database" {
 
   identifier           = "codio-database"
   engine               = "mysql"
+  engine_version       = "8.4"
   allocated_storage    = 5
   instance_class       = "db.t3.micro"
   db_name              = local.database
   username             = local.user
   port                 = "3306"
-  major_engine_version = "8.0"
-  family               = "mysql8.0"
+  major_engine_version = "8.4"
+  family               = "mysql8.4"
 
   create_db_subnet_group = true
   subnet_ids             = [aws_subnet.main.id, aws_subnet.second.id]
